@@ -51,10 +51,11 @@ int base_n_to_dec(int number, int from_base)
 	}
 
 	int result = 0;
-	for (int i = digits.size() - 1; i >= 0; i--)
+	for (int i = 0; i < digits.size(); i++)
 	{
 		int digit = digits[i];
-		result += digit * pow(from_base, i);
+		int exponent = digits.size() - i - 1;
+		result += digit * pow(from_base, exponent);
 	}
 	return result;
 }
